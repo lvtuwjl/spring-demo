@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.alibaba.fastjson.JSON;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
@@ -54,7 +55,12 @@ public class DemoApplication {
 //        list.add("lyf");
 //        det.setData(list);
 //        log.warn("det: {}, {}",det.getName(),det.getData());
-
+//        String s1 = "{\"pname\":\"zhangsan\",\"age\":36,\"student\":{\"name\":\"zhangsan\",\"age\":18}}";
+//        Person person = JSON.parseObject(s1, Person.class);
+//        System.out.println(person);
+//
+//        String s2 = JSON.toJSONString(person);
+//        System.out.println(s2);
     }
 }
 
@@ -66,6 +72,13 @@ class Student{
         this.name = name;
         this.age = age;
     }
+}
+
+@Data
+class Person{
+    private String pname;
+    private int age;
+    private Student student;
 }
 
 class Det{
