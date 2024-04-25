@@ -55,12 +55,17 @@ public class DemoApplication {
 //        list.add("lyf");
 //        det.setData(list);
 //        log.warn("det: {}, {}",det.getName(),det.getData());
-//        String s1 = "{\"pname\":\"zhangsan\",\"age\":36,\"student\":{\"name\":\"zhangsan\",\"age\":18}}";
-//        Person person = JSON.parseObject(s1, Person.class);
-//        System.out.println(person);
-//
-//        String s2 = JSON.toJSONString(person);
-//        System.out.println(s2);
+        String s1 = "{\"pname\":\"zhangsan\",\"age\":36,\"student\":{\"name\":\"zhangsan\",\"age\":18}}";
+        Person person = JSON.parseObject(s1, Person.class);
+        System.out.println(person);
+
+        Student stu = person.getStudent();
+        stu.setName("lisi");
+        System.out.println(person);
+
+
+        String s2 = JSON.toJSONString(person);
+        System.out.println(s2);
     }
 }
 
