@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -66,6 +67,11 @@ public class DemoApplication {
 
         String s2 = JSON.toJSONString(person);
         System.out.println(s2);
+
+        String s3 = "ab0c";
+        System.out.printf("s3: %s\n",s3);
+        byte[] b3 = s3.getBytes();
+        System.out.printf("b3: %s\n", Arrays.toString(b3));
     }
 }
 
